@@ -7,6 +7,6 @@ import (
 
 type ElectionPeriod struct {
 	gorm.Model
-	Start time.Time `gorm:"NOT NULL"`
-	End   time.Time `gorm:"NOT NULL"`
+	Start *time.Time
+	End   *time.Time
 }

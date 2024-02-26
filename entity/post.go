@@ -7,10 +7,10 @@ import (
 
 type Post struct {
 	gorm.Model
-	Title       string `gorm:"type:VARCHAR(64)"`
-	Content     string `gorm:"type:VARCHAR(2048)"`
-	CandidateID uint
-	Candidate   Candidate `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
+	Title       *string `gorm:"type:VARCHAR(64)"`
+	Content     *string `gorm:"type:VARCHAR(2048)"`
+	CandidateID *uint
+	Candidate   *Candidate `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 	Comments    []Comment
 }
 

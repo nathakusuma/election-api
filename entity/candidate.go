@@ -7,9 +7,9 @@ import (
 
 type Candidate struct {
 	gorm.Model
-	UserID    uint   `gorm:"UNIQUE"`
+	UserID    *uint  `gorm:"UNIQUE"`
 	VoteCount uint64 `gorm:"NOT NULL; DEFAULT:0;"`
-	User      User   `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	User      *User  `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	Posts     []Post
 }
 
