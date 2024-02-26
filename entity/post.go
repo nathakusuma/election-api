@@ -15,5 +15,7 @@ type Post struct {
 }
 
 func (p *Post) AfterDelete(tx *gorm.DB) error {
-	return tx.Model(&Comment{}).Where("post_id = ?", p.ID).Update("deleted_at", time.Now()).Error
+	data := tx.Model(&Comment{}).Where("post_id = ?", p.ID)
+	err := data.Update("deleted_at", time.Now()).Error
+	return err
 }

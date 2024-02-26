@@ -14,5 +14,7 @@ type Candidate struct {
 }
 
 func (c *Candidate) AfterDelete(tx *gorm.DB) error {
-	return tx.Model(&Post{}).Where("candidate_id = ?", c.ID).Update("deleted_at", time.Now()).Error
+	data := tx.Model(&Post{}).Where("candidate_id = ?", c.ID)
+	err := data.Update("deleted_at", time.Now()).Error
+	return err
 }
