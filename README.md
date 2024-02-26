@@ -162,13 +162,13 @@ Before you begin, ensure you have the these installed on your machine:
 
 2. Clone the repository or download manually:
 ```shell
-git clone --branch i-putu-natha-kusuma https://github.com/nathakusuma/bcc-be-freepass-2024
+git clone --branch i-putu-natha-kusuma https://github.com/nathakusuma/election-api
 ```
 
 
 3. Navigate to the project directory:
 ```shell
-cd bcc-be-freepass-2024
+cd election-api
 ```
 
 
